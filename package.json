@@ -1,0 +1,12 @@
+{
+  "name": "iis_project",
+  "version": "1.2",
+  "scripts": { 
+    "adapter": "tsc adapter/adapter.ts && node adapter/adapter.js",
+    "factory": "tsc factrory/factrory.ts && node factrory/factrory.js",
+    "strategy": "tsc strategy/strategy.ts && node strategy/strategy.js"
+  },
+  "author": "Nikita Gorbukhov",
+  "license": "MIT",
+  "private": false
+}
