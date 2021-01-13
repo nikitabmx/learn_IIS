@@ -1,10 +1,10 @@
 var BitcoinHolder = /** @class */ (function () {
     function BitcoinHolder(name) {
         this.name = name;
-        this.room = null;
+        this.zavod = null;
     }
     BitcoinHolder.prototype.send = function (message, to) {
-        this.room.send(message, this, to);
+        this.zavod.send(message, this, to);
     };
     BitcoinHolder.prototype.receive = function (message, from) {
         console.log(from.name + " => " + this.name + ": " + message);
@@ -17,7 +17,7 @@ var Zavod = /** @class */ (function () {
     }
     Zavod.prototype.register = function (bitcoinHolder) {
         this.bitcoinHolders[bitcoinHolder.name] = BitcoinHolder;
-        bitcoinHolder.room = this;
+        bitcoinHolder.zavod = this;
     };
     Zavod.prototype.send = function (message, from, to) {
         var _this = this;
@@ -41,6 +41,6 @@ var zavod = new Zavod();
 zavod.register(gleb);
 zavod.register(artem);
 zavod.register(dima);
-gleb.send('Я купил биток по 35к! Скоро на завод!', gleb);
-dima.send('Я купил биток по 35к! Скоро на завод!', dima);
-artem.send('А я купил биток по 40к и иду на завод!', artem);
+gleb.send('Я купил биток по 25к! А ты на завод!', artem);
+dima.send('Я купил биток по 25к! А ты скоро на завод!', artem);
+artem.send('Я купил биток по 40к и иду на завод!', dima);

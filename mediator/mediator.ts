@@ -23,7 +23,7 @@ class Zavod {
 
     register(bitcoinHolder: any) {
         this.bitcoinHolders[bitcoinHolder.name] = BitcoinHolder
-        bitcoinHolder.room = this
+        bitcoinHolder.zavod = this
     }
 
     send(message: string, from: any, to: any) {
@@ -49,6 +49,6 @@ zavod.register(gleb)
 zavod.register(artem)
 zavod.register(dima)
 
-gleb.send('Я купил биток по 35к! Скоро на завод!', gleb)
-dima.send('Я купил биток по 35к! Скоро на завод!', dima)
-artem.send('А я купил биток по 40к и иду на завод!', artem)
+gleb.send('Я купил биток по 25к! А ты на завод!', artem)
+dima.send('Я купил биток по 25к! А ты скоро на завод!', artem)
+artem.send('Я купил биток по 40к и иду на завод!', dima)
